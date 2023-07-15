@@ -11,19 +11,24 @@
 <body>
     <header id="header">
         <nav>
-            <button type="button" id="btn-user" onclick="toggleMenu()">
-                Username
-            </button>
-            <ul class="" id="user-dropdown" >
-                <li>Login</li>
-                <li>Register</li>
-            </ul>
+            <div class="dropdown" data-dropdown>
+                <button type="button" data-dropdown-button>
+                    Username
+                </button>
+                <div class="dropdown-menu">
+                    <ul>
+                        <li>Login</li>
+                        <li>Register</li>
+                        <li>Register</li>
+                        <li>Register</li>
+                        <li>Register</li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
 
-
-
-    <script src="{{asset('js/custom.js')}}"></script>
+    <script src="{{ asset('js/custom.js') }}"></script>
 </body>
 
 </html>

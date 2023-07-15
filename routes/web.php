@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use Illuminate\Routing\Controllers\Middleware;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use PHPUnit\Framework\Attributes\Group;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,8 +16,14 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::view('/', 'admin.index')->name('dashboard');
+
 Route::view('/register','auth.register')->name('register');
 Route::view('/login','auth.login')->name('login');
+
+Route::post('/register',[AuthController::class,'handleRegister'])->name('register.post');
+Route::post('/login',[AuthController::class,'handleLogin'])->name('login.post');
+Route::group(['Middleware'=>'auth.checker'],function(){
+    Route::view('/admin', 'admin.index')->name('admin.dashboard');
+});
 
 Route::view('/','frontend.index')->name('home');

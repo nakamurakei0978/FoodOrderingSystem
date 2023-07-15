@@ -5,5 +5,5 @@
     <a href="{{route('register')}}"><li>Register</li></a>
 @endsection
 @section('content')
-    <h1>Welcome to Register</h1>
+    <h1>Welcome to Homepage</h1>
 @endsection

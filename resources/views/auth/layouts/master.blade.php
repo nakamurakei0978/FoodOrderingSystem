@@ -7,6 +7,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="{{ asset('css/custom-auth.css') }}">
     <script src="{{ asset('js/custom-auth.js') }}" defer></script>
+    <script src="node_modules/swup/dist/swup.min.js" defer></script>
+    <script src="{{asset('js/swup.js')}}"></script>
+    <link rel="stylesheet" href="{{asset('css/swup.css')}}">
 </head>
 
 <body>

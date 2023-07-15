@@ -1,0 +1,53 @@
+:root { 
+    --main-color: #000000; --sub-color: #ffffff;
+    font-family: monospace; font-size: 1.2rem; box-sizing: border-box;
+}
+*{
+    margin: 0; padding: 0;
+}
+ul{
+    list-style: none; 
+}
+a{
+    color: var(--main-color);
+    text-decoration: none;
+}
+#header{
+    background-color: red;
+}
+#header nav{
+    background-color: var(--sub-color); 
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.1);
+    display: flex; justify-content: end; height: 50px;
+    z-index: 99; padding: 0 20px; 
+}
+.dropdown{
+    position: relative;
+}
+.dropdown button{
+    border: none; border-radius: 5px; font-size: inherit;
+    text-align: center; cursor: pointer; padding: 0 20px;
+    background-color: var(--sub-color); height: 100%;
+}
+.dropdown-menu{
+    position: absolute; grid-auto-columns: max-content;
+    background-color: rgb(255, 255, 255); right: 0;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+    padding: 10px 0 11px 0 ; top: calc(100% + 0.5rem);
+    transition:all 300ms ease-in-out; border-radius: 5px;
+    display: grid; grid-template-rows: 0fr;  opacity: 0;
+}
+.dropdown-menu>ul{
+    overflow: hidden; 
+}
+.dropdown.active .dropdown-menu{
+    grid-template-rows: 1fr; opacity: 1; 
+}
+/* #header ul. */
+#header .dropdown-menu ul li{
+    padding: 7px 20px; cursor: pointer;
+}
+#header .dropdown-menu ul li:hover{
+    background-color: aqua;
+}
+

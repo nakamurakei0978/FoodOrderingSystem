@@ -12,4 +12,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::view('/', 'admin.layouts.master')->name('admin');
+Route::view('/', 'admin.index')->name('dashboard');
+Route::view('/register','auth.register')->name('register');
+Route::view('/login','auth.login')->name('login');
+
+Route::view('/','frontend.index')->name('home');

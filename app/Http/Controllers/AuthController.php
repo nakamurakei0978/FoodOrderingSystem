@@ -31,7 +31,7 @@ class AuthController extends Controller
         ]);
         $field = Str::contains($request->name_or_email, '@') ? 'email' : 'name';
 
-        if (Auth::attempt([$field => $request->name_or_email, 'password' => $request->password])) {
+        if (Auth::attempt([$field => $request->name_or_email, 'password' => $request->password],true)) {
             $request->session()->regenerate();
             return redirect()->intended(route('admin.dashboard'))->with('msg','succesfully login');
         }

@@ -48,7 +48,7 @@ a{
     padding: 7px 20px; cursor: pointer;
 }
 #header .dropdown-menu ul li:hover{
-    background-color: aqua;
+    box-shadow: inset 0px 0px 0px 0.1rem rgba(0,0,0,1);
 }
 
 .wrapper{
@@ -56,7 +56,7 @@ a{
 }
 .wrapper>form{
     border: 2px solid black; display: flex; flex-direction: column;
-    position: relative; padding: 2rem; max-width: 385px;
+    position: relative; padding: 2rem; max-width: 385px; margin-top: 5rem;
 }
 .wrapper>form>legend{
     position: absolute; top: -16px; left: 50px; font-weight: bolder; font-size: larger;

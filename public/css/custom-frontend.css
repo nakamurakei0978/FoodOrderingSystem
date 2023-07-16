@@ -48,7 +48,7 @@ a{
     padding: 7px 20px; cursor: pointer; position: relative;
 }
 #header .dropdown-menu ul li:hover{
-    background-color: aqua;
+    box-shadow: inset 0px 0px 0px 0.1rem rgba(0,0,0,1);
 }
 #header .dropdown-menu ul>form>button{
     height: auto; width: 100%; padding: 0;

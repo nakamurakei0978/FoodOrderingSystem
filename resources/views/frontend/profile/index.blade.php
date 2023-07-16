@@ -1,9 +1,12 @@
-@extends('admin.layouts.master')
+@extends('frontend.layouts.master')
 @section('title', 'Settings')
 @section('userbar')
     
-    <a href="{{ route('admin.profile') }}">
+    <a href="{{ route('profile') }}">
         <li>Profile</li>
+    </a>
+    <a href="#">
+        <li>Balance</li>
     </a>
     <a href="#">
         <li>Settings</li>
@@ -15,9 +18,3 @@
         </button>
     </form>
 @endsection
-
-@section('content')
-<h1>welcom to Dashboard.</h1>
-
-@endsection
-

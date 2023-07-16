@@ -16,13 +16,14 @@ class AuthChecker
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Auth::check()){
-            if(Auth::user()->isAdmin()){
-                return $next($request);
-            }else{
-                return redirect(route('home'));
-            }
-        }
-        return redirect(route('login'))->with('msg',"You don't have the permission!");
+        // Use a ternary operator to check if the user is logged in and is an admin
+        return Auth::check() && Auth::user()->isAdmin()
+            // If yes, proceed with the request
+            ? $next($request)
+            // If no, redirect to the appropriate route with a message
+            : redirect(route(Auth::guest() 
+            
+            ? 'login':'home'))->with('msg', "You don't have the permission!");
+
     }
 }

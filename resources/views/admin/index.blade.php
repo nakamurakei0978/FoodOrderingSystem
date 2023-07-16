@@ -2,8 +2,14 @@
 @section('title','Dashboard')
 @section('userbar')
     <li>Profile</li>
-    <li>Logout</li>
+    <form action="{{route('logout.post')}}" method="POST">
+        @csrf
+        <button type="submit"><li>Logout</li></button>
+    </form>
 @endsection
 @section('content')
     <h1>welcom to Dashboard.</h1>
+    @if (session('msg'))
+        {{session('msg')}}
+    @endif
 @endsection

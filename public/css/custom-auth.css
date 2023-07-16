@@ -56,7 +56,7 @@ a{
 }
 .wrapper>form{
     border: 2px solid black; display: flex; flex-direction: column;
-    position: relative; padding: 2rem;
+    position: relative; padding: 2rem; max-width: 385px;
 }
 .wrapper>form>legend{
     position: absolute; top: -16px; left: 50px; font-weight: bolder; font-size: larger;
@@ -70,5 +70,5 @@ a{
     height: 3rem; cursor: pointer;
 }
 .wrapper>form>p{
-    font-size: small; color: red; margin-top: -0.9rem; margin-bottom: 1rem;
+    font-size: 0.7rem; color: red; margin-top: -0.9rem; margin-bottom: 1rem;
 }

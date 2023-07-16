@@ -10,7 +10,13 @@
         <form action="{{route('login.post')}}" method="POST">
             @csrf
             <legend>Login</legend>
-            <input type="text" name="name" placeholder="Username" required>
+            @if (session('error'))
+                <p>{{session('error')}}</p>
+            @endif
+            <input value="{{old('name_or_email')}}" type="text" name="name_or_email" placeholder="Email or Username" required autofocus> 
+            @error('name_or_email')
+                <p>{{$message}}</p>
+            @enderror
             <input type="password" name="password" placeholder="Password" required>
             @error('password')
                 <p>{{$message}}</p>

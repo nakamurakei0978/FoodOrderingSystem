@@ -45,9 +45,13 @@ a{
 }
 /* #header ul. */
 #header .dropdown-menu ul li{
-    padding: 7px 20px; cursor: pointer;
+    padding: 7px 20px; cursor: pointer; position: relative;
 }
 #header .dropdown-menu ul li:hover{
     background-color: aqua;
+}
+#header .dropdown-menu ul>form>button{
+    height: auto; width: 100%; padding: 0;
+    border-radius: 0;text-align: left;
 }
 

@@ -48,7 +48,7 @@
                     </span>
                     <h3>Dashboard</h3>
                 </a>
-                <a href="{{route(admin.users)}}">
+                <a href="{{route('admin.users.list')}}">
                     <span class="material-symbols-sharp">
                         person
                     </span>

@@ -15,3 +15,6 @@
         </button>
     </form>
 @endsection
+@section('content')
+admin profile
+@endsection

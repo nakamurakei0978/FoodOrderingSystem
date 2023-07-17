@@ -23,6 +23,7 @@ class User extends Authenticatable
         'password',
         'image',
         'role',
+        'status',
     ];
 
     /**
@@ -52,5 +53,8 @@ class User extends Authenticatable
     public function isAdmin()
     {
         return $this->role == 1;
+    }
+    public function isActive(){
+        return $this->status == 0;
     }
 }

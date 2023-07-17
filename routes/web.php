@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
 use Illuminate\Auth\Events\Logout;
 use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Support\Facades\Auth;
@@ -31,13 +32,13 @@ Route::prefix('admin')->middleware('auth.checker')->group(function(){
     Route::view('/profile','admin.profile.index')->name('admin.profile');
     Route::resource('/users',UserController::class,[
         'names'=>[
-            'index'=>'users.list',
-            'create'=>'users.new',
-            'store'=>'users.save',
-            'show'=>'users.view',
-            'edit'=>'users.edit',
-            'update'=>'users.update',
-            'destroy'=>'users.delete'
+            'index'=>'admin.users.list',
+            'create'=>'admin.users.new',
+            'store'=>'admin.users.save',
+            'show'=>'admin.users.view',
+            'edit'=>'admin.users.edit',
+            'update'=>'admin.users.update',
+            'destroy'=>'admin.users.delete'
         ]
     ]);
 });

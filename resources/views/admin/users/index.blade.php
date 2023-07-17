@@ -44,7 +44,16 @@
                             @endif
                         </td>
                         <td>
-                            <span class="material-symbols-sharp">more_vert</span>
+                            <div class="dropdown" data-dropdown>
+                                <span class="material-symbols-sharp btn-more" data-dropdown-button>more_vert</span>
+                                <div class="dropdown-menu">
+                                    <ul>
+                                        <li>Details</li>
+                                        <li>Update</li>
+                                        <li>Delete</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                 @endforeach

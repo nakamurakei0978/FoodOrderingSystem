@@ -12,7 +12,8 @@ class AuthController extends Controller
 {
     public function handleRegister(Request $request) {
         $request->validate([
-            'email'=>'required|email|max:255',
+            'name'=>'required|unique:users,name',
+            'email'=>'required|email|max:255|unique:users,email',
             'password'=>'required|min:3|same:re-password',
         ]);
         User::create([

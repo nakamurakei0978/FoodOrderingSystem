@@ -11,7 +11,13 @@
             @csrf
             <legend>Register</legend>
             <input value="{{old('name')}}" type="name" name="name" placeholder="Username" required>
+            @error('name')
+                <p>{{$message}}</p>
+            @enderror
             <input value="{{old('email')}}" type="email" name="email" placeholder="Email" required>
+            @error('email')
+                <p>{{$message}}</p>
+            @enderror
             <input type="password" name="password" placeholder="Password" required>
             @error('password')
                 <p>{{$message}}</p>

@@ -35,8 +35,8 @@
                     <h2>Admin</h2>
                 </div>
                 <div class="close">
-                    <span class="material-symbols-sharp" id="close-btn">
-                        close
+                    <span class="material-symbols-sharp">
+                        chevron_right
                     </span>
                 </div>
             </div>

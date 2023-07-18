@@ -17,6 +17,41 @@ document.addEventListener('click', e => {
   }
 });
 
-const moreBtn=document.querySelector('.more-btn');
-console.log(moreBtn);
+// let btnToggle=document.querySelector('.close');
+// btnToggle=btnToggle.children[0];
+// let container=document.getElementById('container');
+// console.log(btnToggle,container);
 
+// btnToggle.addEventListener('click',function(){
+//   container.classList.toggle('toggleMenu');
+// });
+
+
+
+let btnToggle = document.querySelector('.close');
+btnToggle = btnToggle.children[0];
+let container = document.getElementById('container');
+console.log(btnToggle, container);
+
+// Check the localStorage for the menu state
+let menuState = localStorage.getItem('menuState');
+if (menuState === 'open') {
+  // If the menu was open, add the toggleMenu class
+  container.classList.add('toggleMenu');
+} else {
+  // If the menu was closed, remove the toggleMenu class
+  container.classList.remove('toggleMenu');
+}
+
+btnToggle.addEventListener('click', function () {
+  // Toggle the menu class
+  container.classList.toggle('toggleMenu');
+  // Update the localStorage with the new menu state
+  if (container.classList.contains('toggleMenu')) {
+    // If the menu is open, set the menuState to 'open'
+    localStorage.setItem('menuState', 'open');
+  } else {
+    // If the menu is closed, set the menuState to 'closed'
+    localStorage.setItem('menuState', 'closed');
+  }
+});

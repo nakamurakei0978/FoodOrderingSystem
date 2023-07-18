@@ -63,7 +63,8 @@ class UserController extends Controller
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
-    {
-
+    {  
+        User::where('id',$id)->update(['trash'=>1]);
+        return back()->with('success','Deleted successfully!');
     }
 }

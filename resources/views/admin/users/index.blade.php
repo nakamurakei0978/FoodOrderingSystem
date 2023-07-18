@@ -47,7 +47,12 @@
                             <div class="actions">
                                 <a href="#">Details</a>
                                 <a href="#">Edit</a>
-                                <a href="#">Delete</a>
+                                <form method="post" action="{{ route('admin.users.delete', $user->id) }}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button onclick="return confirm('Are you sure you want to delete this user?')"
+                                        type="submit">Delete</button>
+                                </form>
                             </div>
                         </td>
                     </tr>
@@ -59,4 +64,9 @@
         </div> --}}
     </div>
 
+    @if (session('success'))
+        <script>
+            alert('{{ session('success') }}');
+        </script>
+    @endif
 @endsection

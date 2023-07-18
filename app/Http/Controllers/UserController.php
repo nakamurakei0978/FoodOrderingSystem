@@ -13,8 +13,8 @@ class UserController extends Controller
      */
     public function index(User $user)
     {
-        // $users = $user->latest()->paginate(12);
-        $users = $user->latest()->get()->where('role',0);
+        // $users = $user->latest()->paginate(1);
+        $users = $user->latest()->get()->where('role',0)->where('trash',0);
 
         return view('admin.users.index',compact('users'));
     }
@@ -56,7 +56,7 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        return back();
     }
 
     /**
@@ -64,6 +64,6 @@ class UserController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+
     }
 }

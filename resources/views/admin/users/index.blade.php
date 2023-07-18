@@ -27,32 +27,27 @@
                     <th scope="col">Name</th>
                     <th scope="col">Email</th>
                     <th scope="col">Status</th>
-                    <th scope="col">More</th>
+                    <th scope="col">Actions</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($users as $user)
                     <tr>
-                        <th scope="row">{{$loop->iteration}}{{--$users->firstItem() + $loop->index--}}</th>
-                        <td>{{$user->name}}</td>
-                        <td>{{$user->email}}</td>
+                        <th scope="row">{{ $loop->iteration }}{{-- $users->firstItem() + $loop->index --}}</th>
+                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->email }}</td>
                         <td>
-                            @if ($user->status==0)
+                            @if ($user->status == 0)
                                 Active
                             @else
                                 Inactive
                             @endif
                         </td>
                         <td>
-                            <div class="dropdown" data-dropdown>
-                                <span class="material-symbols-sharp btn-more" data-dropdown-button>more_vert</span>
-                                <div class="dropdown-menu">
-                                    <ul>
-                                        <li>Details</li>
-                                        <li>Update</li>
-                                        <li>Delete</li>
-                                    </ul>
-                                </div>
+                            <div class="actions">
+                                <a href="#">Details</a>
+                                <a href="#">Edit</a>
+                                <a href="#">Delete</a>
                             </div>
                         </td>
                     </tr>

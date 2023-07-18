@@ -30,7 +30,7 @@ Route::post('/logout',[AuthController::class,'handleLogout'])->name('logout.post
 Route::prefix('admin')->middleware('auth.checker')->group(function(){
     Route::view('/','admin.index')->name('admin.dashboard');
     Route::view('/profile','admin.profile.index')->name('admin.profile');
-    Route::resource('/users',UserController::class,[
+    Route::resource('users',UserController::class,[
         'names'=>[
             'index'=>'admin.users.list',
             'create'=>'admin.users.new',
@@ -38,7 +38,7 @@ Route::prefix('admin')->middleware('auth.checker')->group(function(){
             'show'=>'admin.users.view',
             'edit'=>'admin.users.edit',
             'update'=>'admin.users.update',
-            'destroy'=>'admin.users.delete'
+            'destroy'=>'admin.users.delete',
         ]
     ]);
 });

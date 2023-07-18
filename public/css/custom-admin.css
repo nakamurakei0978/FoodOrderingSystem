@@ -82,7 +82,7 @@ img{
     width: 96%;
     margin: 0 auto;
     gap: 1.8rem;
-    grid-template-columns: 13.8rem auto 23rem;
+    grid-template-columns: 13.8rem auto;
 }
 #content{
     padding-top: 1rem; 
@@ -161,11 +161,13 @@ aside .sidebar a:hover span{
 .content>h1{
     margin-top: 1rem; padding: 0;
 }
+
 .t-wrapper{
  background-color: var(--sub-color);
  border-radius: 15px;
  box-shadow:0px 0px 15px 10px rgba(0,0,0,0.1);
- position: relative;top: 1.77rem;height: 83vh;
+ position: relative;
+ top: 1.77rem;height: 83vh;
  transition: all 0.3s ease;
  overflow-y: auto;
 }
@@ -191,8 +193,30 @@ tbody tr>td:last-child, tbody tr>td:nth-last-child(2){
     display: flex;justify-content: space-between;
 }
 .btn-add>button{
-    border: #000000 1px solid;
     padding: 0 1rem;
     cursor: pointer;
     border-radius: 15px;
+    background-color: var(--sub-color);
+    box-shadow:0px 0px 15px 10px rgba(0,0,0,0.1);
+    transition: 0.3s all ease;
+}
+.btn-add>button:hover{
+    box-shadow: none;
+}
+
+.actions{
+    display: flex; justify-content: center;
+}
+.actions>a{
+    border: var(--main-color) 1px solid;
+    padding: 0.2rem 1rem;
+}
+.actions>a:first-child{
+    border-radius: 10px 0 0 10px;
+}
+.actions>a:last-child{
+    border-radius: 0 10px 10px 0;
+}
+.actions>a:hover{
+    background-color: antiquewhite;
 }
